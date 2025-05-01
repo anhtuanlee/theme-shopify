@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "home_test": {
+      "type": "home-test"
+    }
+  },
+  "order": ["home_test"]
+}

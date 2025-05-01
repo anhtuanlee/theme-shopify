@@ -1,0 +1,15 @@
+@use 'tool' as *;
+
+:root {
+  --t: 0.6s;
+  --t-md: 0.4s;
+  --grid-gap: 2.8rem;
+  --container-padding: 6rem;
+
+  @include onlyTablet {
+    --container-padding: 3.2rem;
+  }
+  @include onlyMobile {
+    --container-padding: 2rem;
+  }
+}

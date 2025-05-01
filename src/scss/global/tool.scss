@@ -1,0 +1,61 @@
+@mixin onlyMobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onlyTablet {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tabletAndBelow {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tabletAndAbove {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onlyDesktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin aboveDesktop {
+  @media (min-width: 1880px) {
+    @content;
+  }
+}
+
+@mixin onHover {
+  @media (any-hover: hover) {
+    &:hover & {
+      @content;
+    }
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin text-shorten($numLines: 1, $break: anywhere) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-break: $break;
+
+  @supports (-webkit-line-clamp: $numLines) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+  }
+}

@@ -1,0 +1,22 @@
+{{ 'sc-test.css' | asset_url }}
+
+<home-test class="wrapper">
+    <div class="container">
+    {{ section.settings.test }}
+    </div>
+</home-test>
+
+<script src="{{ 'home-test.js' | asset_url}}" defer></script> 
+
+{% schema %}
+    {
+        "name": "home-test",
+        "settings": [
+            {
+                "type": "text",
+                "id": "test",
+                "label": "Test"
+            }
+        ]
+    }
+{% endschema %}
